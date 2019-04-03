@@ -8,10 +8,13 @@ public class EnemyController : MonoBehaviour
     public float speed = 4f;
     public GameObject coinPrefab;
 
-
     private Rigidbody2D riBody2D;
     private Animator animator;
     private Collider2D col2D;
+
+    ///
+    
+    private GameObject chill;
 
     //////////////
     private int movmentDirection = 1;
@@ -21,9 +24,10 @@ public class EnemyController : MonoBehaviour
     {
         riBody2D = GetComponent<Rigidbody2D>();
         riBody2D.velocity = Vector2.left * speed;
-
+        
         animator = GetComponent<Animator>();
         col2D = GetComponent<Collider2D>();
+        chill = transform.Find("Otro").gameObject;
     }
     void Update()
     {
@@ -36,7 +40,9 @@ public class EnemyController : MonoBehaviour
 
     void EnemyDeath()
     {
+        chill.gameObject.SetActive(false);
         gameObject.tag = "Finish";
+        
         isDeath = true;
         riBody2D.velocity = Vector2.zero;
         riBody2D.isKinematic = true;

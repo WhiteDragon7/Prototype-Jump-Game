@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour
     {
         estadojuego = GameState.Playing;
         //ui.SetActive(false);
-        uiDontGame.SetActive(true);
+        uiDontGame.SetActive(false);
         uiInGame.SetActive(true);
         player.SendMessage("UpdateEstado", "Walk");
         generador.SendMessage("StartGenerador");

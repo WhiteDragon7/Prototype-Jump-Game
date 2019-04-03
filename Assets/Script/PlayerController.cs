@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public GameObject game;
     public GameObject generador;
     public PlatformControlller[] platform;
-
+    public GameObject statsPlayer;
 
     //public AudioClip saltoClip;
     //public AudioClip muerteClip;
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
     }
     void restartGame()
     {
-        //animator.Play();
+        animator.StopPlayback();
     }
 
     private void MovmentPlayer()
@@ -196,8 +196,9 @@ public class PlayerController : MonoBehaviour
             game.GetComponent<GameController>().estadojuego = GameController.GameState.Death;
             generador.SendMessage("StopGenerator", true);
             playing = false;
-            gameObject.GetComponentInChildren<Collider2D>().enabled = false;
-
+            //gameObject.GetComponentInChildren<Collider2D>().enabled = false;
+            statsPlayer.SendMessage("PlayerDeath");
+            Invoke("restartGame",3f);
             /*ParticleStop();
             game.GetComponent<AudioSource>().Stop();
             audioPlayer.clip = muerteClip;

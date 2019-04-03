@@ -27,7 +27,7 @@ public class StatsPlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Coin")
         {
- 
+            game.SendMessage("IncrementarScore");
             Destroy(collision.gameObject);
             //Destroy(collision);
         }
@@ -56,5 +56,9 @@ public class StatsPlayerController : MonoBehaviour
     {
         inmune = false;
         player.isInmune = false;
+    }
+    void PlayerDeath()
+    {
+        gameObject.GetComponent<Collider2D>().enabled = false;
     }
 }

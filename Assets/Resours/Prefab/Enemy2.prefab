@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1666283379537884870}
   m_Layer: 0
   m_Name: Enemy2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6697c1d3df334a54699b22858f88e855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.25
+  speed: 1.75
   coinPrefab: {fileID: 8588649215038728701, guid: 7820d2cfe6bc14a44a05725872210bf8,
     type: 3}
 --- !u!95 &1666283379537884870
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 4642821742478702248}
   - component: {fileID: 2336877664502443559}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Otro
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
